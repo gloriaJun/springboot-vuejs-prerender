@@ -1,0 +1,6 @@
+server.port: 8080
+logging.level.org.springframework: INFO
+# thymeleaf
+#spring.thymeleaf.mode: LEGACYHTML5
+#spring.thymeleaf.prefix: classpath:/dist
+#spring.resources.static-locations: classpath:/dist

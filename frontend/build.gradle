@@ -1,0 +1,28 @@
+plugins {
+  id "com.moowork.node" version "1.2.0"
+}
+
+node {
+  version = '9.3.0'
+  npmVersion = '5.8.0'
+  download = true
+}
+
+//-------------------------------
+//    Tasks - NPM
+//-------------------------------
+task npmBuild(type: NpmTask) {
+  args = ['run', 'build']
+}
+
+task npmStart(type: NpmTask) {
+  args = ['start']
+}
+
+task npmClean(type: Delete) {
+  delete 'dist'
+}
+
+npmBuild.dependsOn(npmInstall)
+npmStart.dependsOn(npmInstall)
+

@@ -1,0 +1,11 @@
+.DS_Store
+
+# configuration for gradle
+.gradle/
+
+# Intellij project files
+.idea/
+*.iml
+
+src/main/resources/static/
+src/main/resources/templates/
