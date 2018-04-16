@@ -1,4 +1,4 @@
-springboot with vuejs (SPA)
+springboot with vuejs (Prerender)
 
 sprignboot랑 연동하기
 

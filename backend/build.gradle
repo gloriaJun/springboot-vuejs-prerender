@@ -41,13 +41,15 @@ task resourcesCopy(dependsOn: ':frontend:npmBuild') {
     doLast {
         // copy template
         copy {
-            from '../frontend/dist/index.html'
-            into 'build/main/resources/templates'
+            from ('../frontend/dist') {
+                exclude 'static'
+            }
+            into 'build/resources/main/templates'
         }
         // copy static
         copy {
             from '../frontend/dist/static'
-            into 'build/main/resources/static/static'
+            into 'build/resources/main/static/static'
         }
     }
 }
@@ -64,4 +66,5 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleVersion
 }
 
+//bootJar.dependsOn clean
 clean.dependsOn ':frontend:npmClean'
